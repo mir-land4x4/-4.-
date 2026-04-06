@@ -1,0 +1,17 @@
+#include <LedControl.h>
+
+LedControl lc = LedControl(11, 13, 10, 1);
+
+void setup() {
+  lc.shutdown(0, false);
+  lc.setIntensity(0, 8);
+  lc.clearDisplay(0);
+}
+
+void loop() {
+  for(int row=0; row<8; row++) {
+    lc.clearDisplay(0);
+    lc.setRow(0, row, 0xFF); // зажигаем строку
+    delay(100);
+  }
+} 
